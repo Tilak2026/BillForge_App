@@ -1,0 +1,28 @@
+Options -Indexes
+
+# ── UTF-8 Charset for ALL files (fixes ₹ symbol rendering) ──────
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .htm .js .css .json .php .txt
+
+# Proper Content-Type headers
+<IfModule mod_mime.c>
+    AddType application/javascript;charset=UTF-8  .js
+    AddType text/css;charset=UTF-8                .css
+    AddType text/html;charset=UTF-8               .html .htm
+    AddType application/json;charset=UTF-8        .json
+</IfModule>
+
+# ── Routing: /api/* → PHP handlers ──────────────────────────────
+RewriteEngine On
+RewriteBase /BillForge_App/
+
+# Serve existing files as-is
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route API requests to router.php
+RewriteRule ^api/(.*)$ api/router.php [QSA,L]
+
+# Serve index.html for root or /public
+RewriteRule ^$ public/index.html [L]
+RewriteRule ^public/?$ public/index.html [L]

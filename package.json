@@ -1,0 +1,30 @@
+{
+  "name": "billforge_app",
+  "version": "1.0.0",
+  "description": "BillForge is a comprehensive web-based billing, inventory, and customer management system. It provides an intuitive interface to manage products, customers, invoices, purchases, quotations, and expenses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/your-repo-name.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/your-username/your-repo-name/issues"
+  },
+  "homepage": "https://github.com/your-username/your-repo-name#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "playwright-core": "^1.59.1"
+  }
+}
