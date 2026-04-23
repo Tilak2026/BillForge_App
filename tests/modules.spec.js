@@ -48,14 +48,8 @@ test.describe('BillForge Core Modules Integrity', () => {
 
             // Assert that the module view panel is visibly active
             const pageContainer = page.locator(`#page-${mod}`);
-            
-            // 🔥 INTENTIONAL SABOTAGE FOR GITHUB VERSION CONTROL DEMO 
-            if (mod === 'gst' || mod === 'expenses') {
-                await expect(pageContainer).toHaveClass(/failed-version-control-demo-class/, { timeout: 3000 });
-            } else {
-                await expect(pageContainer).toHaveClass(/active/, { timeout: 20000 });
-                await expect(pageContainer).toBeVisible({ timeout: 20000 });
-            }
+            await expect(pageContainer).toHaveClass(/active/, { timeout: 20000 });
+            await expect(pageContainer).toBeVisible({ timeout: 20000 });
         });
     }
 
